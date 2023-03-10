@@ -6,9 +6,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class IndexController {
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public ModelAndView index(){
-        return new ModelAndView("index");
+@RequestMapping(value = "/interface")
+public class UserAccounts {
+    @RequestMapping(value = "/add",method = RequestMethod.GET)
+    public ModelAndView interfaceUser(){
+        return new ModelAndView("interfaceUser");
     }
 }

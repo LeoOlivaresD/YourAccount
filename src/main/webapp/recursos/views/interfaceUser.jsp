@@ -1,12 +1,10 @@
+<%@ page import="cl.maximuscode.youraccont.models.entities.Users" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Your Account</title>
-
+    <title>Profile</title>
     <!-- Boottraps -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
           integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
@@ -14,15 +12,11 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/style.css">
 </head>
 <body>
-<div class="title"><h1>Welcome to Your Account</h1></div>
+<div class="title"><h1>Profile User</h1></div>
 <div class="secondTitle">
-    <h4>Create your User</h4>
+    <h3>Start adding an account</h3>
 </div>
 
-<div style="text-align: center">
-    <spring:url value="/user/create" var="create"/>
-    <a class="comenzar btn btn-info" href="${create}" role="button">Comenzar</a>
-</div>
 
 <!-- Boottraps -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"

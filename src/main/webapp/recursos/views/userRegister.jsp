@@ -18,10 +18,33 @@
 <div class="secondTitle">
     <h4>Create your User</h4>
 </div>
+<div class="container">
 
-<div style="text-align: center">
-    <spring:url value="/user/create" var="create"/>
-    <a class="comenzar btn btn-info" href="${create}" role="button">Comenzar</a>
+    <spring:url value="/user/save" var="saveURL" htmlEscape="true"/>
+    <form:form modelAttribute="userForm" method="post" action="${saveURL}" cssClass="form">
+        <form:hidden path="idUser"/>
+        <div class="form-group row">
+            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-4">
+                <form:input path="email" cssClass="form-control" id="email"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="password" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-4">
+                <form:input type="password" path="password" cssClass="form-control" id="password"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="name" class="col-sm-2 col-form-label">Name User</label>
+            <div class="col-sm-4">
+                <form:input type="password" path="name" cssClass="form-control" id="name"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-info col-sm-2">Registrarse</button>
+        </div>
+    </form:form>
 </div>
 
 <!-- Boottraps -->
