@@ -1,7 +1,6 @@
-<%@ page import="cl.maximuscode.youraccont.models.entities.Users" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
     <title>Profile</title>
@@ -17,6 +16,48 @@
     <h3>Start adding an account</h3>
 </div>
 
+<div class="container">
+    <spring:url value="/interface/save" var="saveURL" htmlEscape="true"/>
+    <form:form modelAttribute="accountForm" method="post" action="${saveURL}" cssClass="form">
+       <form:hidden path="accountId"/>
+
+        <div class="form-group row">
+            <label for="type" class="col-sm-3 col-form-label">Account type</label>
+            <div class="col-sm-6">
+                <form:input path="typeAccount" cssClass="form-control" id="type" placeholder="Example: social network, gaming"/>
+
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="name" class="col-sm-3 col-form-label">Name for account</label>
+            <div class="col-sm-6">
+                <form:input path="nameAccount" cssClass="form-control" id="name" placeholder ="Example: Facebook, Fornite"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="email" class="col-sm-3 col-form-label">Email linked to account</label>
+            <div class="col-sm-6">
+                <form:input type="email" path="emailAccount" cssClass="form-control" id="email"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="username" class="col-sm-3 col-form-label">User name/nickname Account</label>
+            <div class="col-sm-6">
+                <form:input path="userNameAccount" cssClass="form-control" id="username" placeholder ="Example: cs_shoot"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="pwUser" class="col-sm-3 col-form-label">Password Account</label>
+            <div class="col-sm-6">
+                <form:input path="userPasswAccount" cssClass="form-control" id="pwUser"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-info col-sm-3">Add Account</button>
+        </div>
+    </form:form>
+
+</div>
 
 <!-- Boottraps -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
