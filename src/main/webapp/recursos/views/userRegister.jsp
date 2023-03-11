@@ -38,7 +38,7 @@
         <div class="form-group row">
             <label for="name" class="col-sm-2 col-form-label">Name User</label>
             <div class="col-sm-4">
-                <form:input type="password" path="name" cssClass="form-control" id="name"/>
+                <form:input path="name" cssClass="form-control" id="name"/>
             </div>
         </div>
         <div class="form-group">

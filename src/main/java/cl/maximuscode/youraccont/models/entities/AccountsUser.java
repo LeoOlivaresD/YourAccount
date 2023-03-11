@@ -1,33 +1,59 @@
 package cl.maximuscode.youraccont.models.entities;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "accounts_user")
 public class AccountsUser {
-    private Integer accountID;
+    @Id
+    @Column(name = "account_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer accountId;
+    @Column(name = "type_account")
     private String typeAccount;
+    @Column(name = "name_account")
     private String nameAccount;
+    @Column(name = "email_account")
     private String emailAccount;
+    @Column(name = "username_account")
     private String userNameAccount;
+    @Column(name = "password_account")
     private String userPasswAccount;
-    private Integer userID;
+
+    @Column(name = "user_id")
+    private Integer userId;
 
     public AccountsUser() {
     }
 
-    public AccountsUser(Integer accountID, String typeAccount, String nameAccount, String emailAccount, String userNameAccount, String userPasswAccount, Integer userID) {
-        this.accountID = accountID;
+    public AccountsUser(Integer accountId) {
+        this.accountId = accountId;
+    }
+
+    public AccountsUser(Integer accountId, String typeAccount, String nameAccount, String emailAccount, String userNameAccount, String userPasswAccount, Integer userId) {
+        this.accountId = accountId;
         this.typeAccount = typeAccount;
         this.nameAccount = nameAccount;
         this.emailAccount = emailAccount;
         this.userNameAccount = userNameAccount;
         this.userPasswAccount = userPasswAccount;
-        this.userID = userID;
+        this.userId = userId;
     }
 
-    public Integer getAccountID() {
-        return accountID;
+    public AccountsUser(String typeAccount, String nameAccount, String emailAccount, String userNameAccount, String userPasswAccount) {
+        this.typeAccount = typeAccount;
+        this.nameAccount = nameAccount;
+        this.emailAccount = emailAccount;
+        this.userNameAccount = userNameAccount;
+        this.userPasswAccount = userPasswAccount;
     }
 
-    public void setAccountID(Integer accountID) {
-        this.accountID = accountID;
+    public Integer getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(Integer accountId) {
+        this.accountId = accountId;
     }
 
     public String getTypeAccount() {
@@ -70,11 +96,11 @@ public class AccountsUser {
         this.userPasswAccount = userPasswAccount;
     }
 
-    public Integer getUserID() {
-        return userID;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUserID(Integer userID) {
-        this.userID = userID;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 }

@@ -1,5 +1,4 @@
 package cl.maximuscode.youraccont.controllers;
-
 import cl.maximuscode.youraccont.models.entities.Users;
 import cl.maximuscode.youraccont.models.service.UsersServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,21 +18,21 @@ public class UserController {
     @Autowired
     private UsersServices usersServices;
 
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public ModelAndView showUser() {
-        ModelAndView model = new ModelAndView();
-        List<Users> users = usersServices.readAll();
-        model.addObject("userForm", users);
-        model.setViewName("listUsers");
-        return model;
-    }
-
     @RequestMapping(value = "/create", method = RequestMethod.GET)
     public ModelAndView createUser() {
         ModelAndView model = new ModelAndView();
         Users users = new Users();
         model.addObject("userForm", users);
         model.setViewName("userRegister");
+        return model;
+    }
+
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public ModelAndView showUser() {
+        ModelAndView model = new ModelAndView();
+        List<Users> users = usersServices.readAll();
+        model.addObject("userForm", users);
+        model.setViewName("listUsers");
         return model;
     }
 
@@ -53,7 +52,7 @@ public class UserController {
         } else {
             usersServices.create(users);
         }
-        return new ModelAndView("redirect:/interface/add");
+        return new ModelAndView("redirect:/interface/create");
     }
 
 }
