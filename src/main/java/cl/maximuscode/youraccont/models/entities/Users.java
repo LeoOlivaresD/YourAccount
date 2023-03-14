@@ -10,7 +10,6 @@ public class Users {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idUser;
     private String email;
-    @Column(name = "passw")
     private String password;
 
     private String name;

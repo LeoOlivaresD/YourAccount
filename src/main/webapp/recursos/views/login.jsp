@@ -27,11 +27,11 @@
     <form action="${pageContext.request.contextPath}/login" method="post">
       <div class="form-group text-white">
         <label for="name">Name user </label>
-        <input type="text" class="form-control" id="name">
+        <input type="text" class="form-control" id="name" name="name">
       </div>
       <div class="form-group text-white">
-        <label for="passw">Password</label>
-        <input type="password" name="password" class="form-control" id="passw">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password">
       </div>
       <button type="submit" class="btn btn-primary"> Log in </button>
     </form>

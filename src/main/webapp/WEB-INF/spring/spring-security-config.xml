@@ -11,7 +11,7 @@
         <security:intercept-url pattern="/interface/list" access="hasAnyAuthority ('usuario')"/>
         <security:intercept-url pattern="/interface/create" access="hasAnyAuthority ('usuario')"/>
         <security:form-login login-page="/login" authentication-failure-url="/error"
-                             username-parameter="name" password-parameter="passw"/>
+                             username-parameter="name" password-parameter="password"/>
         <security:csrf disabled="true"/>
         <security:logout logout-success-url="/"/>
     </security:http>
@@ -19,10 +19,12 @@
 
     <security:authentication-manager>
         <security:authentication-provider>
-            <security:password-encoder hash="bcrypt"/>
+            <security:password-encoder ref="noOpPasswordEncoder"/>
             <security:jdbc-user-service data-source-ref="ds"
-                                        users-by-username-query="select name as username, passw, 1 as enabled from user where name = ?"
-                                        authorities-by-username-query="SELECT name as username, rol as authority from user where name = ?"/>
+                                        users-by-username-query="SELECT name AS username, password, 1 AS enabled FROM user WHERE name = ?"
+                                        authorities-by-username-query="SELECT name AS username, rol AS authority FROM user WHERE name = ?"/>
         </security:authentication-provider>
     </security:authentication-manager>
+    <bean id="noOpPasswordEncoder"
+          class="org.springframework.security.crypto.password.NoOpPasswordEncoder"/>
 </beans>
