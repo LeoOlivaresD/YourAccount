@@ -22,6 +22,9 @@ public class AccountsUser {
 
     @Column(name = "user_id")
     private Integer userId;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private Users user;
 
     public AccountsUser() {
     }

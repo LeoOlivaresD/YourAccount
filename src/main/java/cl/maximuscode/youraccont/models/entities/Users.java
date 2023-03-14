@@ -1,6 +1,8 @@
 package cl.maximuscode.youraccont.models.entities;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "user")
@@ -13,6 +15,8 @@ public class Users {
     private String password;
 
     private String name;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<AccountsUser> accounts = new HashSet<>();
 
     //Constructor con id
     public Users(Integer idUser, String email, String password, String name) {
