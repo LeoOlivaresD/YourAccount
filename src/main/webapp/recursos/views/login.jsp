@@ -10,15 +10,24 @@
   <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/style.css">
 </head>
 <body>
-<section>
-  <div class="container d-flex justify-content-center">
-    <%
-      String error = (String)request.getAttribute("error");
-      if (error != null && error.equals("true")){
-        out.println("<h3 class='alert alert-danger text-center'>Incorrect user</h3>");
-    %>
+<section class="container loginForm d-flex justify-content-center text-white align-items-center vh-100 ">
+  <div>
     <form action="${pageContext.request.contextPath}/login" method="post">
       <div class="form-group text-white">
+        <%
+          String error = (String) request.getAttribute("error");
+          if (error != null && error.equals("true")) {
+        %>
+        <h3 class="alert alert-danger text-center">Incorrect user</h3>
+        <%
+        } else if (Boolean.TRUE.equals(request.getSession().getAttribute("loggedIn"))) {
+        %>
+        <h3 class="alert-success text-center">Correct user</h3>
+        <%
+            // establece la variable loggedIn a false para que el mensaje de éxito no se muestre de nuevo en la recarga de la página
+            request.getSession().setAttribute("loggedIn", false);
+          }
+        %>
         <label for="name">Name user </label>
         <input type="text" class="form-control" id="name" name="name">
       </div>
