@@ -15,8 +15,7 @@ public class Users {
     private String password;
 
     private String name;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<AccountsUser> accounts = new HashSet<>();
+
 
     //Constructor con id
     public Users(Integer idUser, String email, String password, String name) {
@@ -68,4 +67,6 @@ public class Users {
     public void setName(String name) {
         this.name = name;
     }
+
+
 }

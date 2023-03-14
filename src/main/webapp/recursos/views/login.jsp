@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Leonardo
-  Date: 11-03-2023
-  Time: 0:39
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -17,12 +11,11 @@
 </head>
 <body>
 <section>
-  <div class="container justify-content-center">
+  <div class="container d-flex justify-content-center">
     <%
       String error = (String)request.getAttribute("error");
       if (error != null && error.equals("true")){
         out.println("<h3 class='alert alert-danger text-center'>Incorrect user</h3>");
-      }
     %>
     <form action="${pageContext.request.contextPath}/login" method="post">
       <div class="form-group text-white">

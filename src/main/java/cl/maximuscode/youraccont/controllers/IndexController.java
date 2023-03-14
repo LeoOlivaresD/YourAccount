@@ -20,6 +20,7 @@ public class IndexController {
     public ModelAndView errorLogin(){
         return new ModelAndView("login","error","true");
     }
+
     @RequestMapping(path = "/logout")
     public ModelAndView logout(){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
