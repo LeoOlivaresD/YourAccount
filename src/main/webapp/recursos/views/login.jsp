@@ -10,7 +10,10 @@
   <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/style.css">
 </head>
 <body>
-<section class="container loginForm d-flex justify-content-center text-white align-items-center vh-100 ">
+<div class="container justify-content-center align-content-center title">
+  <h1> Ingresa con tu nombre de usuario y contraseña</h1>
+</div>
+<section class="container successLogin d-flex justify-content-center text-white align-items-center vh-70 ">
   <div>
     <form action="${pageContext.request.contextPath}/login" method="post">
       <div class="form-group text-white">
@@ -21,13 +24,10 @@
         <h3 class="alert alert-danger text-center">Incorrect user</h3>
         <%
         } else if (Boolean.TRUE.equals(request.getSession().getAttribute("loggedIn"))) {
+           
+        }
         %>
-        <h3 class="alert-success text-center">Correct user</h3>
-        <%
-            // establece la variable loggedIn a false para que el mensaje de éxito no se muestre de nuevo en la recarga de la página
-            request.getSession().setAttribute("loggedIn", false);
-          }
-        %>
+
         <label for="name">Name user </label>
         <input type="text" class="form-control" id="name" name="name">
       </div>
@@ -46,5 +46,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
+
+<!--Js-->
+<script src="${pageContext.request.contextPath}/res/js/functions.js"></script>
 </body>
 </html>
