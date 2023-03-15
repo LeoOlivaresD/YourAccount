@@ -11,8 +11,10 @@ public class Users {
     @Column(name = "id_user")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idUser;
+    @Column(unique = true)
     private String email;
     private String password;
+    @Column(unique = true)
     private String name;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
