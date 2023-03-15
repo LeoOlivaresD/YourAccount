@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/style.css">
 </head>
 <body>
-<div class="title"><h1>Welcome to Your Account</h1></div>
+<div class="title container justify-content-center align-content-center vh-30"><h1>Welcome to Your Account</h1></div>
 <div class="secondTitle">
     <h4>Create your User</h4>
 </div>

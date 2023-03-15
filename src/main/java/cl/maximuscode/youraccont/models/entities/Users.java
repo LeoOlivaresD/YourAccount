@@ -1,8 +1,8 @@
 package cl.maximuscode.youraccont.models.entities;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -13,16 +13,19 @@ public class Users {
     private Integer idUser;
     private String email;
     private String password;
-
     private String name;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<AccountsUser> accounts = new ArrayList<>();
 
     //Constructor con id
-    public Users(Integer idUser, String email, String password, String name) {
+
+    public Users(Integer idUser, String email, String password, String name, List<AccountsUser> accounts) {
         this.idUser = idUser;
         this.email = email;
         this.password = password;
         this.name = name;
+        this.accounts = accounts;
     }
 
     //Constructor sin id
@@ -68,5 +71,11 @@ public class Users {
         this.name = name;
     }
 
+    public List<AccountsUser> getAccounts() {
+        return accounts;
+    }
 
+    public void setAccounts(List<AccountsUser> accounts) {
+        this.accounts = accounts;
+    }
 }

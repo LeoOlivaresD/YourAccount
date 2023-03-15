@@ -1,5 +1,7 @@
 package cl.maximuscode.youraccont.models.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -19,30 +21,15 @@ public class AccountsUser {
     private String userNameAccount;
     @Column(name = "password_account")
     private String userPasswAccount;
-
-    @Column(name = "user_id")
-    private Integer userId;
-
-
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private Users user;
 
     public AccountsUser() {
     }
 
-    public AccountsUser(Integer accountId) {
+    public AccountsUser(Integer accountId, String typeAccount, String nameAccount, String emailAccount, String userNameAccount, String userPasswAccount) {
         this.accountId = accountId;
-    }
-
-    public AccountsUser(Integer accountId, String typeAccount, String nameAccount, String emailAccount, String userNameAccount, String userPasswAccount, Integer userId) {
-        this.accountId = accountId;
-        this.typeAccount = typeAccount;
-        this.nameAccount = nameAccount;
-        this.emailAccount = emailAccount;
-        this.userNameAccount = userNameAccount;
-        this.userPasswAccount = userPasswAccount;
-        this.userId = userId;
-    }
-
-    public AccountsUser(String typeAccount, String nameAccount, String emailAccount, String userNameAccount, String userPasswAccount) {
         this.typeAccount = typeAccount;
         this.nameAccount = nameAccount;
         this.emailAccount = emailAccount;
@@ -96,14 +83,6 @@ public class AccountsUser {
 
     public void setUserPasswAccount(String userPasswAccount) {
         this.userPasswAccount = userPasswAccount;
-    }
-
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
     }
 
 
