@@ -10,7 +10,7 @@
         <security:intercept-url pattern="/" access="permitAll()"/>
         <security:intercept-url pattern="/interface/list" access="hasAnyAuthority ('usuario')"/>
         <security:intercept-url pattern="/interface/create" access="hasAnyAuthority ('usuario')"/>
-        <security:form-login login-page="/login" authentication-failure-url="/error"
+        <security:form-login login-page="/login" default-target-url="/interface/listAccounts/{userId}" authentication-failure-url="/error"
                              username-parameter="name" password-parameter="password"/>
         <security:csrf disabled="true"/>
         <security:logout logout-success-url="/"/>

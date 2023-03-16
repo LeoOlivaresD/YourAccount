@@ -28,13 +28,14 @@ public class AccountsUser {
     public AccountsUser() {
     }
 
-    public AccountsUser(Integer accountId, String typeAccount, String nameAccount, String emailAccount, String userNameAccount, String userPasswAccount) {
+    public AccountsUser(Integer accountId, String typeAccount, String nameAccount, String emailAccount, String userNameAccount, String userPasswAccount, Users user) {
         this.accountId = accountId;
         this.typeAccount = typeAccount;
         this.nameAccount = nameAccount;
         this.emailAccount = emailAccount;
         this.userNameAccount = userNameAccount;
         this.userPasswAccount = userPasswAccount;
+        this.user = user;
     }
 
     public Integer getAccountId() {
@@ -85,5 +86,11 @@ public class AccountsUser {
         this.userPasswAccount = userPasswAccount;
     }
 
+    public Users getUser() {
+        return user;
+    }
 
+    public void setUser(Users user) {
+        this.user = user;
+    }
 }

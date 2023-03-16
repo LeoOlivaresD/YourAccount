@@ -26,7 +26,7 @@ public class AccountsUserController {
         return model;
     }
 
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    @RequestMapping(value = "/list", method = RequestMethod.GET) //this method will show all the accounts in our database
     public ModelAndView readAll() {
         ModelAndView model = new ModelAndView();
         List<AccountsUser> account = accountService.readAll();
@@ -34,6 +34,27 @@ public class AccountsUserController {
         model.setViewName("listAccounts");
         return model;
     }
+
+    @RequestMapping("/listAccounts/{userId}")
+    public ModelAndView getAccountsByUserId(@PathVariable Integer userId) {
+        ModelAndView model = new ModelAndView();
+        Integer account = accountService.getUserIdByAccountId(userId);
+        model.addObject("accountForm", account);
+        model.setViewName("listAccounts");
+        return model;
+        //return accountService.getUserIdByAccountId(userId);
+    }
+
+    /*@RequestMapping(value = "/accounts", method = RequestMethod.GET)
+    public String listAccountsForCurrentUser(Model model, Authentication authentication) {
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        List<AccountsUser> userAccounts = accountService.findByUsername(userDetails.getUsername());
+        model.addAttribute("accountForm", userAccounts);
+        return "listAccounts";
+    }*/
+
+
+
 
     @RequestMapping(value = "/update/{accountId}", method = RequestMethod.GET)
     public ModelAndView update(@PathVariable Integer accountId) {
@@ -51,7 +72,7 @@ public class AccountsUserController {
         } else {
             accountService.create(account);
         }
-        return new ModelAndView("redirect:/interface/list");
+        return new ModelAndView("redirect:/interface/listAccounts//{userId}");
     }
 
     @RequestMapping(value = "/delete/{accountId}", method = RequestMethod.GET)
