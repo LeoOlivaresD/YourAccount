@@ -17,46 +17,44 @@
     <h3>Start adding an account</h3>
 </div>
 
-<div class="container ">
+<div class="container d-flex justify-content-center align-content-center">
     <spring:url value="/interface/save" var="saveURL" htmlEscape="true"/>
     <form:form modelAttribute="accountForm" method="post" action="${saveURL}" cssClass="form">
         <form:hidden path="accountId"/>
         <div class="form-group row">
-            <label for="type" class="col-sm-3 col-form-label">Account type</label>
-            <div class="col-sm-6">
-                <form:input path="typeAccount" cssClass="form-control" id="type"
-                            placeholder="Example: social network, gaming"/>
-
+            <label for="type" class="col-sm-4 col-form-label">Account type</label>
+            <div class="col-sm-8">
+                <form:input path="typeAccount" cssClass="form-control" id="type" placeholder="Example: social network, gaming"/>
             </div>
         </div>
         <div class="form-group row">
-            <label for="nameAccount" class="col-sm-3 col-form-label">Name for account</label>
-            <div class="col-sm-6">
+            <label for="nameAccount" class="col-sm-4 col-form-label">Name for account</label>
+            <div class="col-sm-8">
                 <form:input path="nameAccount" cssClass="form-control" id="nameAccount"
                             placeholder="Example: Facebook, Fornite"/>
             </div>
         </div>
         <div class="form-group row">
-            <label for="emailAccount" class="col-sm-3 col-form-label">Email linked to account</label>
-            <div class="col-sm-6">
+            <label for="emailAccount" class="col-sm-4 col-form-label">Email linked to account</label>
+            <div class="col-sm-8">
                 <form:input type="email" path="emailAccount" cssClass="form-control" id="emailAccount"/>
             </div>
         </div>
         <div class="form-group row">
-            <label for="userNameAccount" class="col-sm-3 col-form-label">User name/nickname Account</label>
-            <div class="col-sm-6">
+            <label for="userNameAccount" class="col-sm-4 col-form-label">User name/nickname Account</label>
+            <div class="col-sm-8">
                 <form:input path="userNameAccount" cssClass="form-control" id="userNameAccount"
                             placeholder="Example: cs_shoot"/>
             </div>
         </div>
         <div class="form-group row">
-            <label for="userPasswAccount" class="col-sm-3 col-form-label">Password Account</label>
-            <div class="col-sm-6">
-                <form:input path="userPasswAccount" cssClass="form-control" id="userPasswAccount"/>
+            <label for="userPasswAccount" class="col-sm-4 col-form-label">Password Account</label>
+            <div class="col-sm-8">
+                <form:input path="userPasswAccount"  cssClass="form-control" id="userPasswAccount" type="password"/>
             </div>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-info col-sm-3">Add Account</button>
+            <button type="submit" class="btn btn-info col-sm-4">Add Account</button>
         </div>
     </form:form>
 
