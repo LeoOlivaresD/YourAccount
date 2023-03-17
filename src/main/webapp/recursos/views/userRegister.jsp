@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 <html>
@@ -15,6 +16,7 @@
 </head>
 <body>
 <div class="title"><h1>Welcome to Your Account</h1></div>
+
 <div class="secondTitle">
     <h4>Create your User</h4>
 </div>

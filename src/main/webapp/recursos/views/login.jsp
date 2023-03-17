@@ -24,7 +24,6 @@
         <h3 class="alert alert-danger text-center">Incorrect user</h3>
         <%
         } else if (Boolean.TRUE.equals(request.getSession().getAttribute("loggedIn"))) {
-           
         }
         %>
 
