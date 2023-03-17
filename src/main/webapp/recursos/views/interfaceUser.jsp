@@ -17,7 +17,7 @@
     <h3>Start adding an account</h3>
 </div>
 
-<div class="container">
+<div class="container ">
     <spring:url value="/interface/save" var="saveURL" htmlEscape="true"/>
     <form:form modelAttribute="accountForm" method="post" action="${saveURL}" cssClass="form">
         <form:hidden path="accountId"/>
