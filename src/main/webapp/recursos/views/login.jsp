@@ -47,6 +47,6 @@
         crossorigin="anonymous"></script>
 
 <!--Js-->
-<script src="${pageContext.request.contextPath}/res/js/functions.js"></script>
+<script src="${pageContext.request.contextPath}/res/js/alerts.js"></script>
 </body>
 </html>

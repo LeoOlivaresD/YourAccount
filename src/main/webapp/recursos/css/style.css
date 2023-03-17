@@ -34,5 +34,10 @@
 .form{
   color: white;
 }
+.comenzar{
+  padding:1.5rem 3rem 1.5rem 3rem;
+  border-radius:3rem;
+  font-size:1.5em;
+}
 
 
