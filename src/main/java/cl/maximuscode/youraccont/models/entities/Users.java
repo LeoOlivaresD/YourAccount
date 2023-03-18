@@ -1,11 +1,10 @@
 package cl.maximuscode.youraccont.models.entities;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class Users {
     @Id
     @Column(name = "id_user")
@@ -13,8 +12,9 @@ public class Users {
     private Integer idUser;
     @Column(unique = true)
     private String email;
+    @Column(name = "password_user")
     private String password;
-    @Column(unique = true)
+    @Column(name = "name_user" , unique = true)
     private String name;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
