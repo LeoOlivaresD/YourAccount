@@ -1,3 +1,3 @@
-const successLoginSection = document.querySelector('.successLogin');
-alert('¡Inicio de sesión exitoso!');
+//Alertar inicio de sesion exitoso
+
 

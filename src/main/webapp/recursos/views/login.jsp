@@ -15,17 +15,12 @@
 </div>
 <section class="container successLogin d-flex justify-content-center text-white align-items-center vh-70 ">
   <div>
-    <form action="${pageContext.request.contextPath}/login" method="post">
+    <form id="login-form" action="${pageContext.request.contextPath}/login" method="post">
       <div class="form-group text-white">
         <%
           String error = (String) request.getAttribute("error");
           if (error != null && error.equals("true")) {
-        %>
-        <h3 class="alert alert-danger text-center">Incorrect user</h3>
-        <%
-        } else if (Boolean.TRUE.equals(request.getSession().getAttribute("loggedIn"))) {
-        }
-        %>
+        %> <h3 class="alert alert-danger text-center">Incorrect user</h3><% } %>
 
         <label for="name">Name user </label>
         <input type="text" class="form-control" id="name" name="name">
@@ -34,7 +29,7 @@
         <label for="password">Password</label>
         <input type="password" class="form-control" id="password" name="password">
       </div>
-      <button type="submit" class="btn btn-info"> Log in </button>
+      <button type="submit" id="buttonClick" class="btn btn-info"> Log in </button>
     </form>
   </div>
 </section>
