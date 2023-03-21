@@ -11,7 +11,7 @@
         <security:intercept-url pattern="/interface/list" access="hasAnyAuthority ('usuario')"/>
         <security:intercept-url pattern="/interface/create" access="hasAnyAuthority ('usuario')"/>
         <security:form-login login-page="/login" default-target-url="/interface/create" authentication-failure-url="/error"
-                             username-parameter="name" password-parameter="password"/>
+                             username-parameter="name_user" password-parameter="password_user"/>
         <security:csrf disabled="true"/>
         <security:logout logout-success-url="/"/>
     </security:http>
@@ -21,8 +21,8 @@
         <security:authentication-provider>
             <security:password-encoder ref="noOpPasswordEncoder"/>
             <security:jdbc-user-service data-source-ref="ds"
-                                        users-by-username-query="SELECT name AS username, password, 1 AS enabled FROM user WHERE name = ?"
-                                        authorities-by-username-query="SELECT name AS username, rol AS authority FROM user WHERE name = ?"/>
+                                        users-by-username-query="SELECT name_user AS username, password_user AS  password, 1 AS enabled FROM user WHERE name = ?"
+                                        authorities-by-username-query="SELECT name_user AS username, rol AS authority FROM user WHERE name = ?"/>
         </security:authentication-provider>
     </security:authentication-manager>
     <bean id="noOpPasswordEncoder"
