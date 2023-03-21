@@ -17,6 +17,8 @@
     <h3>Start adding an account</h3>
 </div>
 
+
+
 <div class="container d-flex justify-content-center align-content-center">
     <spring:url value="/interface/save" var="saveURL" htmlEscape="true"/>
     <form:form modelAttribute="accountForm" method="post" action="${saveURL}" cssClass="form">
@@ -51,6 +53,12 @@
             <label for="userPasswAccount" class="col-sm-4 col-form-label">Password Account</label>
             <div class="col-sm-8">
                 <form:input path="userPasswAccount"  cssClass="form-control" id="userPasswAccount" type="password"/>
+            </div>
+        </div>
+        <div class="form-group row" style="display: block">
+            <label for="userId" class="col-sm-4 col-form-label">Id Current User ${usedId} </label>
+            <div class="col-sm-8">
+                <form:input path="user"  cssClass="form-control" id="userId"/>
             </div>
         </div>
         <div class="form-group">
