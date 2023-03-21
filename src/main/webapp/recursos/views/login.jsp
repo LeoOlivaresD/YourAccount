@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -31,7 +30,7 @@
         <label for="password">Password</label>
         <input type="password" class="form-control" id="password" name="password">
       </div>
-      <button type="submit" id="buttonClick" class="btn btn-info"> Log in </button>
+      <button type="submit" class="btn btn-info"> Log in </button>
     </form>
   </div>
 </section>

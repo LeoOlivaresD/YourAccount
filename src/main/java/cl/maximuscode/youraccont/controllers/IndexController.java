@@ -16,11 +16,6 @@ public class IndexController {
     public ModelAndView login(){
         return new ModelAndView("login");
     }
-
-    /*@RequestMapping(value = "/login" , method = RequestMethod.POST)
-    public ModelAndView successLogin(){
-        return new ModelAndView("redirect:/user/create");
-    }*/
     @RequestMapping(path = "/error")
     public ModelAndView errorLogin(){
         return new ModelAndView("login","error","true");
