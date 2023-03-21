@@ -44,8 +44,9 @@ public class Users {
         return idUser;
     }
 
-    public void setIdUser(Integer idUser) {
+    public Integer setIdUser(Integer idUser) {
         this.idUser = idUser;
+        return idUser;
     }
 
     public String getEmail() {
