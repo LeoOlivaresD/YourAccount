@@ -1,7 +1,9 @@
 package cl.maximuscode.youraccont.controllers;
 import cl.maximuscode.youraccont.models.entities.AccountsUser;
 import cl.maximuscode.youraccont.models.service.AccountsUserService;
+import cl.maximuscode.youraccont.models.service.UsersServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,12 +18,25 @@ import java.util.Optional;
 public class AccountsUserController {
     @Autowired
     private AccountsUserService accountService;
+    @Autowired
+    private UsersServices usersServices;
 
-    @RequestMapping(value = "/create", method = RequestMethod.GET)
+    /*@RequestMapping(value = "/create", method = RequestMethod.GET)
     public ModelAndView create() {
         ModelAndView model = new ModelAndView();
         AccountsUser account = new AccountsUser();
         model.addObject("accountForm", account);
+        model.setViewName("interfaceUser");
+        return model;
+    }*/
+    @RequestMapping(value = "/create", method = RequestMethod.GET)
+    public ModelAndView create(Authentication authentication) {
+        String username = authentication.getName();
+        Integer userId = usersServices.getUserID(username);
+        ModelAndView model = new ModelAndView();
+        AccountsUser account = new AccountsUser();
+        model.addObject("accountForm", account);
+        model.addObject("usedId", userId);
         model.setViewName("interfaceUser");
         return model;
     }
@@ -42,19 +57,7 @@ public class AccountsUserController {
         model.addObject("accountForm", account);
         model.setViewName("listAccounts");
         return model;
-        //return accountService.getUserIdByAccountId(userId);
     }
-
-    /*@RequestMapping(value = "/accounts", method = RequestMethod.GET)
-    public String listAccountsForCurrentUser(Model model, Authentication authentication) {
-        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-        List<AccountsUser> userAccounts = accountService.findByUsername(userDetails.getUsername());
-        model.addAttribute("accountForm", userAccounts);
-        return "listAccounts";
-    }*/
-
-
-
 
     @RequestMapping(value = "/update/{accountId}", method = RequestMethod.GET)
     public ModelAndView update(@PathVariable Integer accountId) {
