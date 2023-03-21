@@ -21,14 +21,6 @@ public class AccountsUserController {
     @Autowired
     private UsersServices usersServices;
 
-    /*@RequestMapping(value = "/create", method = RequestMethod.GET)
-    public ModelAndView create() {
-        ModelAndView model = new ModelAndView();
-        AccountsUser account = new AccountsUser();
-        model.addObject("accountForm", account);
-        model.setViewName("interfaceUser");
-        return model;
-    }*/
     @RequestMapping(value = "/create", method = RequestMethod.GET)
     public ModelAndView create(Authentication authentication) {
         String username = authentication.getName();
@@ -75,7 +67,8 @@ public class AccountsUserController {
         } else {
             accountService.create(account);
         }
-        return new ModelAndView("redirect:/interface/listAccounts//{userId}");
+        //return new ModelAndView("redirect:/interface/listAccounts//{userId}");
+        return new ModelAndView("redirect:/interface/list");
     }
 
     @RequestMapping(value = "/delete/{accountId}", method = RequestMethod.GET)
