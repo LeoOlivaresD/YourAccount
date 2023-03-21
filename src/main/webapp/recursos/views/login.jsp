@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/style.css">
 </head>
 <body>
+
+<!--Login Form-->
 <div class="container justify-content-center align-content-center title">
   <h1> Ingresa con tu nombre de usuario y contraseña</h1>
 </div>

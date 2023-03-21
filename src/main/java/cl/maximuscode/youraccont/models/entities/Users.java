@@ -14,7 +14,7 @@ public class Users {
     private String email;
     @Column(name = "password_user")
     private String password;
-    @Column(name = "name_user" , unique = true)
+    @Column(name = "name_user")
     private String name;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
@@ -38,7 +38,6 @@ public class Users {
     }
 
     public Users() {
-
     }
 
     public Integer getIdUser() {
