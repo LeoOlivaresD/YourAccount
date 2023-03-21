@@ -3,6 +3,7 @@ package cl.maximuscode.youraccont.models.service;
 import cl.maximuscode.youraccont.models.entities.Users;
 import cl.maximuscode.youraccont.models.repositories.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -32,5 +33,12 @@ public class UsersServices {
     public void delete(Integer idUser){
         iUserRepository.deleteById(idUser);
     }
-
+    public Integer getUserID(String name) {
+        Users user = iUserRepository.findByName(name);
+        if (user != null) {
+            return user.getIdUser();
+        } else {
+            throw new UsernameNotFoundException("User not found");
+        }
+    }
 }
