@@ -1,19 +1,15 @@
 package cl.maximuscode.youraccont.controllers;
 import cl.maximuscode.youraccont.models.entities.AccountsUser;
-import cl.maximuscode.youraccont.models.entities.Users;
 import cl.maximuscode.youraccont.models.service.AccountsUserService;
 import cl.maximuscode.youraccont.models.service.UsersServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
