@@ -63,7 +63,7 @@ public class AccountsUserController {
         ModelAndView model = new ModelAndView();
         Optional<AccountsUser> account = accountService.readOne(accountId);
         model.addObject("accountForm", account);
-        model.setViewName("userRegister");
+        model.setViewName("interfaceUser");
         return model;
     }
 
