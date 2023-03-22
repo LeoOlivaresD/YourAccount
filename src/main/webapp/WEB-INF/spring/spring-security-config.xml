@@ -10,7 +10,7 @@
         <security:intercept-url pattern="/" access="permitAll()"/>
         <security:intercept-url pattern="/interface/list" access="hasAnyAuthority ('usuario')"/>
         <security:intercept-url pattern="/interface/create" access="hasAnyAuthority ('usuario')"/>
-        <security:form-login login-page="/login" default-target-url="/interface/create"
+        <security:form-login login-page="/login" default-target-url="/interface/listAccounts"
                              authentication-failure-url="/error"
                              username-parameter="name" password-parameter="password"/> <!--En esta línea los nombres
                              deben coincidir con los nombres que asignamos en los campos de nuestro formulario-->
