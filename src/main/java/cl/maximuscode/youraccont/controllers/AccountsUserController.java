@@ -80,7 +80,7 @@ public class AccountsUserController {
     @RequestMapping(value = "/delete/{accountId}", method = RequestMethod.GET)
     public ModelAndView delete(@PathVariable("accountId") Integer accountId) {
         accountService.delete(accountId);
-        return new ModelAndView("redirect:/interface/list");
+        return new ModelAndView("redirect:/interface/listAccounts");
     }
 
 }
