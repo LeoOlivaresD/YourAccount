@@ -33,7 +33,7 @@ public class UsersServices {
         iUserRepository.deleteById(idUser);
     }
 
-    //Metodo creado para poder buscar el id por medio del nombre obtenido de un usuario logueado atreves del objeto Authentication.
+    //Método creado para poder buscar el id por medio del nombre obtenido de un usuario logueado atreves del objeto Authentication.
     public Integer getUserID(String name) {
         Users user = iUserRepository.findByName(name);
         if (user != null) {
