@@ -7,5 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface IUserRepository extends JpaRepository<Users, Integer> {
+    //Metodo para buscar un usuario su nombre
     Users findByName(String name);
 }
