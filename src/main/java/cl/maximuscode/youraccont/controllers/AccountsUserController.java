@@ -1,15 +1,19 @@
 package cl.maximuscode.youraccont.controllers;
 import cl.maximuscode.youraccont.models.entities.AccountsUser;
+import cl.maximuscode.youraccont.models.entities.Users;
 import cl.maximuscode.youraccont.models.service.AccountsUserService;
 import cl.maximuscode.youraccont.models.service.UsersServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -42,14 +46,17 @@ public class AccountsUserController {
         return model;
     }
 
-    @RequestMapping("/listAccounts/{userId}")
-    public ModelAndView getAccountsByUserId(@PathVariable Integer userId) {
+    @RequestMapping(value = "/listAccounts", method = RequestMethod.GET)
+    public ModelAndView getAccountsByUserId(Authentication authentication) {
+        String username = authentication.getName();
+        Integer idUser = usersServices.getUserID(username);
         ModelAndView model = new ModelAndView();
-        Integer account = accountService.getUserIdByAccountId(userId);
-        model.addObject("accountForm", account);
+        List<AccountsUser> accountsList = accountService.findByUserId(idUser);
+        model.addObject("accountsList" , accountsList);
         model.setViewName("listAccounts");
         return model;
     }
+
 
     @RequestMapping(value = "/update/{accountId}", method = RequestMethod.GET)
     public ModelAndView update(@PathVariable Integer accountId) {
