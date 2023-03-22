@@ -74,8 +74,7 @@ public class AccountsUserController {
         } else {
             accountService.create(account);
         }
-        //return new ModelAndView("redirect:/interface/listAccounts//{userId}");
-        return new ModelAndView("redirect:/interface/list");
+        return new ModelAndView("redirect:/interface/listAccounts");
     }
 
     @RequestMapping(value = "/delete/{accountId}", method = RequestMethod.GET)
