@@ -19,6 +19,7 @@
     <table class="table">
         <thead class="table">
         <tr class="text-white">
+            <th>Id User</th>
             <th>Account id</th>
             <th>Account type</th>
             <th>Account name</th>
@@ -30,20 +31,20 @@
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${accountForm}" var="accountForm">
+        <c:forEach items="${accountsList}" var="account">
             <tr>
-                <td>${accountForm.accountId}</td>
-                <td>${accountForm.typeAccount}</td>
-                <td>${accountForm.nameAccount}</td>
-                <td>${accountForm.emailAccount}</td>
-                <td>${accountForm.userNameAccount}</td>
-                <td>${accountForm.userPasswAccount}</td>
+                <td>${account.accountId}</td>
+                <td>${account.typeAccount}</td>
+                <td>${account.nameAccount}</td>
+                <td>${account.emailAccount}</td>
+                <td>${account.userNameAccount}</td>
+                <td>${account.userPasswAccount}</td>
                 <td>
-                    <spring:url value="/interface/update/${accountForm.accountId}" var="actualizarURL"/>
+                    <spring:url value="/interface/update/${account.accountId}" var="actualizarURL"/>
                     <a class="btn btn-info" href="${actualizarURL}" role="button">Edit</a>
                 </td>
                 <td>
-                    <spring:url value="/interface/delete/${accountForm.accountId}" var="eliminarURL"/>
+                    <spring:url value="/interface/delete/${account.accountId}" var="eliminarURL"/>
                     <a class="btn btn-info" href="${eliminarURL}" role="button">Eliminar</a>
                 </td>
             </tr>
