@@ -1,6 +1,4 @@
 package cl.maximuscode.youraccont.models.service;
-
-import cl.maximuscode.youraccont.models.entities.AccountsUser;
 import cl.maximuscode.youraccont.models.entities.Users;
 import cl.maximuscode.youraccont.models.repositories.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
