@@ -43,5 +43,10 @@ public class AccountsUserService {
             throw new NoSuchElementException("No se encontró la cuenta con ID " + accountId);
         }
     }
+    //Metodo para retornar una lista de cuentas vinculadas a un usuario
+    public List<AccountsUser> findByUserId(Integer idUser) {
+        return accountRepo.findByUser_IdUser(idUser);
+    }
+
 
 }
