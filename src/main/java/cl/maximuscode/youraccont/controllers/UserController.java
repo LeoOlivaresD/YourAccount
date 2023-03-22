@@ -32,7 +32,6 @@ public class UserController {
         ModelAndView model = new ModelAndView();
         List<Users> users = usersServices.readAll();
         model.addObject("userForm", users);
-        model.setViewName("listUsers");
         return model;
     }
 
