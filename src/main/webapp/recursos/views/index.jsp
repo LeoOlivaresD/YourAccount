@@ -21,7 +21,7 @@
 
 <div style="text-align: center">
     <spring:url value="/user/create" var="create"/>
-    <a class="comenzar btn btn-info" href="${create}" role="button">Comenzar</a>
+    <a class="comenzar btn btn-info" href="${create}" role="button">Start</a>
 </div>
 
 <!-- Boottraps -->
