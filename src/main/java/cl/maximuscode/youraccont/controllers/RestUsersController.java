@@ -23,5 +23,9 @@ public class RestUsersController {
     public List<Users> getUsers() {
         return usersServices.readAll();
     }
+    @GetMapping(value = "/api/readOne/{id}")
+    public Optional<Users> readOne(@PathVariable("id")Integer idUser){
+        return usersServices.readOne(idUser);
+    }
 
 }
