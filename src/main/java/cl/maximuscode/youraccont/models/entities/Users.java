@@ -1,4 +1,6 @@
 package cl.maximuscode.youraccont.models.entities;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +20,8 @@ public class Users {
     private String name;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonIgnore /*Implementamos esta notación para poder realizar consultas desde el servicio Rest sin que nos ocasione
+    problemas el atributo a la entidad relacionada*/
     private List<AccountsUser> accounts = new ArrayList<>();
 
     //Constructor con id
