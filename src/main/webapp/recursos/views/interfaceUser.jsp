@@ -56,9 +56,8 @@
             </div>
         </div>
         <div class="form-group row" style="display: block">
-            <label for="userId" class="col-sm-4 col-form-label">Id Current User ${usedId} </label>
             <div class="col-sm-8">
-                <form:input path="user.idUser"  cssClass="form-control" id="userId" value = "${usedId}"/>
+                <form:hidden path="user.idUser"  cssClass="form-control" id="userId" value = "${usedId}"/>
             </div>
         </div>
         <div class="form-group">
