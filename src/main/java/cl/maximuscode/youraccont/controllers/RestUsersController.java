@@ -19,5 +19,9 @@ public class RestUsersController {
         usersServices.create(users);
     }
 
+    @GetMapping(value = "/api/readAll", headers = "Accept=application/json")
+    public List<Users> getUsers() {
+        return usersServices.readAll();
+    }
 
 }
