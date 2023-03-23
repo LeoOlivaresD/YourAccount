@@ -27,5 +27,8 @@ public class RestUsersController {
     public Optional<Users> readOne(@PathVariable("id")Integer idUser){
         return usersServices.readOne(idUser);
     }
-
+    @PutMapping(value = "/api/update")
+    public void update(@RequestBody Users users){
+        usersServices.update(users);
+    }
 }
