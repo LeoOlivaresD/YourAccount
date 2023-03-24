@@ -10,42 +10,42 @@
           integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <!-- Style-->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 </head>
 <body>
 <div class="title">
-    <h1>Accounts registered on the site</h1>
+    <h1 class="h1 d-none d-md-block">Accounts registered on the site</h1>
+    <h1 class="h3 d-block d-md-none">Accounts registered on the site</h1>
 </div>
 <div class="container">
-    <table class="table">
+    <table class="table text-white table-bordered table-responsive">
         <thead class="table">
-        <tr class="text-white">
-            <th>Id User</th>
+        <tr class="text-white text-center">
             <th>Account id</th>
             <th>Account type</th>
             <th>Account name</th>
             <th>Account email linked</th>
             <th>Account name user/nickname</th>
             <th>Account password</th>
-            <th style="text-align: right">Options</th>
-
+            <th>Options</th>
         </tr>
         </thead>
         <tbody>
         <c:forEach items="${accountsList}" var="account">
             <tr>
-                <td>${account.accountId}</td>
-                <td>${account.typeAccount}</td>
-                <td>${account.nameAccount}</td>
-                <td>${account.emailAccount}</td>
+                <td class="col-3">${account.accountId}</td>
+                <td class="col-3">${account.typeAccount}</td>
+                <td class="col-3">${account.nameAccount}</td>
+                <td class="col-3">${account.emailAccount}</td>
                 <td>${account.userNameAccount}</td>
                 <td>${account.userPasswAccount}</td>
                 <td>
-                    <spring:url value="/interface/update/${account.accountId}" var="actualizarURL"/>
-                    <a class="btn btn-info" href="${actualizarURL}" role="button">Edit</a>
-                </td>
-                <td>
-                    <spring:url value="/interface/delete/${account.accountId}" var="eliminarURL"/>
-                    <a class="btn btn-info" href="${eliminarURL}" role="button">Eliminar</a>
+                   <div class="btn-group">
+                       <spring:url value="/interface/update/${account.accountId}" var="actualizarURL"/>
+                       <a class="btn btn-info" href="${actualizarURL}" role="button">Edit</a>
+                       <spring:url value="/interface/delete/${account.accountId}" var="eliminarURL"/>
+                       <a class="btn btn-info" href="${eliminarURL}" role="button">Eliminar</a>
+                   </div>
                 </td>
             </tr>
         </c:forEach>
