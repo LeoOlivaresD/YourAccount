@@ -5,6 +5,8 @@
 <html>
 <head>
     <title>Profile</title>
+    <!--Animaciones-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- Boottraps -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
           integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
@@ -12,14 +14,16 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/style.css">
 </head>
 <body>
-<div class="title"><h1>Profile User</h1></div>
-<div class="secondTitle">
+
+<div class="title animate__animated animate__zoomIn animate__slow">
+    <h1>Profile User</h1>
+</div>
+
+<div class="secondTitle animate__animated animate__zoomIn animate__slow">
     <h3>Start adding an account</h3>
 </div>
 
-
-
-<div class="container d-flex justify-content-center align-content-center">
+<div class="container d-flex justify-content-center align-content-center animate__animated animate__slow animate__bounceInUp animate__delay-1s">
     <spring:url value="/interface/save" var="saveURL" htmlEscape="true"/>
     <form:form modelAttribute="accountForm" method="post" action="${saveURL}" cssClass="form">
         <form:hidden path="accountId"/>
@@ -62,6 +66,9 @@
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-info col-sm-4">Add Account</button>
+        </div>
+        <div class="form-group">
+            <a class="btn btn-info" href="${pageContext.request.contextPath}/logout" role="button">Logout</a>
         </div>
     </form:form>
 
