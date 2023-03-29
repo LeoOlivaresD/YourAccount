@@ -6,7 +6,8 @@
 <html>
 <head>
     <title>Your Account</title>
-
+    <!--Animaciones-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- Boottraps -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
           integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
@@ -14,16 +15,25 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/style.css">
 </head>
 <body>
-<div class="title container justify-content-center align-content-center vh-30"><h1>Welcome to Your Account</h1></div>
-<div class="secondTitle">
+
+<div class="title container justify-content-center align-content-center vh-30 animate__animated animate__zoomIn animate__slow">
+    <h1>Welcome to Your Account</h1>
+</div>
+
+<div class="secondTitle animate__animated animate__zoomIn animate__slow">
     <h4>Create your User</h4>
 </div>
 
-<div style="text-align: center">
+<div style="text-align: center" class="animate__animated animate__slow animate__bounceInUp animate__delay-1s">
     <spring:url value="/user/create" var="create"/>
     <a class="comenzar btn btn-info" href="${create}" role="button">Start</a>
 </div>
 
+<div class="container justify-content-center align-content-center mt-3
+animate__animated animate__slow animate__bounceInUp animate__delay-1s" style="text-align: center">
+    <a class="text-decoration-none text-white btn" href="${pageContext.request.contextPath}/login" role="button">Log
+        in</a>
+</div>
 <!-- Boottraps -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
