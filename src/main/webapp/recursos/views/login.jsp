@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Log in</title>
+  <!--Animaciones-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <!-- Boottraps -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
@@ -11,11 +13,11 @@
 <body>
 
 <!--Login Form-->
-<div class="container justify-content-center align-content-center title">
-  <h1> Ingresa con tu nombre de usuario y contraseña</h1>
+<div class="container justify-content-center align-content-center title animate__animated animate__zoomIn animate__slow">
+  <h1> Login with your username and password </h1>
 </div>
 <section class="container successLogin d-flex justify-content-center text-white align-items-center vh-70 ">
-  <div>
+  <div class="animate__animated animate__slow animate__bounceInUp animate__delay-1s">
     <form id="login-form" action="${pageContext.request.contextPath}/login" method="post">
       <div class="form-group text-white">
         <%
@@ -41,8 +43,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
-
-<!--Js-->
-<script src="${pageContext.request.contextPath}/res/js/alerts.js"></script>
 </body>
 </html>
