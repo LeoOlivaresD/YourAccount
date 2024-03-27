@@ -30,10 +30,6 @@ Login:
 
 [![login.jpg](https://i.postimg.cc/1z9gdh53/login.jpg)](https://postimg.cc/4YSNK09D)  
 
-Menú listado de Cuentas:  
-
-[![listado-de-cuentas.jpg](https://i.postimg.cc/667hcRm1/listado-de-cuentas.jpg)](https://postimg.cc/MXSRKcxy)  
-
 Menú creación de cuentas:  
 
 [![creacion-de-cuentas.jpg](https://i.postimg.cc/d0xyZNwQ/creacion-de-cuentas.jpg)](https://postimg.cc/DW1ZtgSR)  
